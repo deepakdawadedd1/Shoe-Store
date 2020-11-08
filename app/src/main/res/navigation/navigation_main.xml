@@ -8,6 +8,20 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.nanodegree.shoestore.login.LoginFragment"
-        tools:layout="@layout/fragment_login"
-        android:label="LoginFragment" />
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.udacity.nanodegree.shoestore.welcome.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
 </navigation>

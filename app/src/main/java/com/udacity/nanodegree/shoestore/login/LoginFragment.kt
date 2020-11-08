@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.udacity.nanodegree.shoestore.R
 import com.udacity.nanodegree.shoestore.databinding.FragmentLoginBinding
 
@@ -27,6 +28,19 @@ class LoginFragment : Fragment() {
         loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = loginViewModel
         binding.lifecycleOwner = this
+        loginViewModel.eventLoginComplete.observe(viewLifecycleOwner) { hasLogged ->
+            if (hasLogged) {
+                navigateToOnBoarding()
+                loginViewModel.loginComplete()
+            }
+        }
         return binding.root
     }
+
+    private fun navigateToOnBoarding() {
+        val navDirections =
+            LoginFragmentDirections.actionLoginToWelcome(loginViewModel.emailField.value ?: "")
+        findNavController().navigate(navDirections)
+    }
+
 }

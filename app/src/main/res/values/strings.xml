@@ -6,4 +6,5 @@
     <string name="enter_email">Enter email</string>
     <string name="password">Password</string>
     <string name="login">login</string>
+    <string name="welcome">Welcome</string>
 </resources>
