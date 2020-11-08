@@ -11,4 +11,7 @@
     <string name="login_fragment_title">Login</string>
     <string name="logout">Logout</string>
     <string name="enter_password">Enter password</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_text">Press below button to open shoe list.</string>
+    <string name="shoe_list">Shoe list</string>
 </resources>

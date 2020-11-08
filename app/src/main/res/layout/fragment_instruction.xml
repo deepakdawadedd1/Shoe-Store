@@ -5,21 +5,18 @@
 
     <data>
 
-        <variable
-            name="welcomeViewModel"
-            type="com.udacity.nanodegree.shoestore.welcome.WelcomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".welcome.WelcomeFragment">
+        tools:context=".instruction.InstructionFragment">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/welcome_fragment_welcome_text"
+            android:id="@+id/instruction_fragment_instruction_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/welcome"
+            android:text="@string/instructions"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -30,28 +27,28 @@
             app:layout_constraintVertical_bias="0.2" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/welcome_fragment_username_text"
+            android:id="@+id/instruction_fragment_instruction_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"
-            android:text="@{welcomeViewModel.email}"
+            android:lineSpacingExtra="10sp"
+            android:padding="16dp"
+            android:text="@string/instruction_text"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_fragment_welcome_text"
-            tools:text="Deepakdawade@gmail.com" />
+            app:layout_constraintTop_toBottomOf="@id/instruction_fragment_instruction_label" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/welcome_fragment_instructions"
+            android:id="@+id/instruction_fragment_shoe_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{()-> welcomeViewModel.navigateToInstructions()}"
-            android:text="@string/instructions"
+            android:text="@string/shoe_list"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome_fragment_username_text" />
+            app:layout_constraintTop_toBottomOf="@id/instruction_fragment_instruction_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

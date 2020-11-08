@@ -22,11 +22,18 @@ class WelcomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         welcomeViewModelFactory = WelcomeViewModelFactory(args.email)
-        welcomeViewModel =
-            ViewModelProvider(this, welcomeViewModelFactory).get(WelcomeViewModel::class.java)
-        welcomeViewModel.email.observe(viewLifecycleOwner) { email ->
-            binding.welcomeFragmentUsernameText.text = email
+        welcomeViewModel = ViewModelProvider(this, welcomeViewModelFactory)
+            .get(WelcomeViewModel::class.java)
+        binding.welcomeViewModel = welcomeViewModel
+        binding.lifecycleOwner = this
+
+        welcomeViewModel.eventInstruction.observe(viewLifecycleOwner) { canNavigate ->
+            if (canNavigate) {
+                findNavController().navigate(WelcomeFragmentDirections.actionWelcomeToInstructions())
+                welcomeViewModel.navigateToInstructionsComplete()
+            }
         }
+
         setHasOptionsMenu(true)
         return binding.root
     }

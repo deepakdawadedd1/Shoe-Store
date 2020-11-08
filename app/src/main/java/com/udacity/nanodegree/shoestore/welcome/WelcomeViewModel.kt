@@ -14,7 +14,19 @@ class WelcomeViewModel(email: String) : ViewModel() {
     private val _email = MutableLiveData<String>()
     val email: LiveData<String> get() = _email
 
+    private val _eventInstructions = MutableLiveData<Boolean>()
+    val eventInstruction: LiveData<Boolean> get() = _eventInstructions
+
     init {
         _email.value = email
+        _eventInstructions.value = false
+    }
+
+    fun navigateToInstructions() {
+        _eventInstructions.value = true
+    }
+
+    fun navigateToInstructionsComplete() {
+        _eventInstructions.value = false
     }
 }
