@@ -29,15 +29,6 @@
             android:name="email"
             app:argType="string" />
         <action
-            android:id="@+id/action_welcome_to_login"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/welcomeFragment"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_welcome_to_instructions"
             app:destination="@id/instructionFragment" />
     </fragment>
@@ -45,5 +36,24 @@
         android:id="@+id/instructionFragment"
         android:name="com.udacity.nanodegree.shoestore.instruction.InstructionFragment"
         android:label="@string/instructions"
-        tools:layout="@layout/fragment_instruction" />
+        tools:layout="@layout/fragment_instruction">
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.udacity.nanodegree.shoestore.shoelist.ShoeListFragment"
+        android:label="@string/shoe_list_fragment_title"
+        tools:layout="@layout/fragment_shoe_list">
+        <action
+            android:id="@+id/action_shoe_list_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

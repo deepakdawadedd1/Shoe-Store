@@ -14,4 +14,6 @@
     <string name="instructions">Instructions</string>
     <string name="instruction_text">Press below button to open shoe list.</string>
     <string name="shoe_list">Shoe list</string>
+    <string name="fab">Fab</string>
+    <string name="shoe_list_fragment_title">Shoe list</string>
 </resources>

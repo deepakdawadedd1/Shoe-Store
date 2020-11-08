@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/instruction_fragment_instruction_label" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/instruction_fragment_shoe_list"
+            android:id="@+id/instruction_fragment_shoe_list_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/shoe_list"
