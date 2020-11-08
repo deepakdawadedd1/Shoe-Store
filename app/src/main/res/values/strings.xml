@@ -7,4 +7,8 @@
     <string name="password">Password</string>
     <string name="login">login</string>
     <string name="welcome">Welcome</string>
+    <string name="welcome_fragment_title">Welcome</string>
+    <string name="login_fragment_title">Login</string>
+    <string name="logout">Logout</string>
+    <string name="enter_password">Enter password</string>
 </resources>
