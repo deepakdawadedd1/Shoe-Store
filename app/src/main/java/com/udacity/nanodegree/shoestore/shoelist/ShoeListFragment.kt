@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.udacity.nanodegree.shoestore.R
 import com.udacity.nanodegree.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.nanodegree.shoestore.welcome.WelcomeFragmentDirections
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +21,9 @@ class ShoeListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding.shoeListFragmentToShoeDetails.setOnClickListener {
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListToShoeDetails())
+        }
         setHasOptionsMenu(true)
         return binding.root
     }

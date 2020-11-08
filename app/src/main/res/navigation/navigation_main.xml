@@ -55,5 +55,17 @@
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/welcomeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_shoeList_to_shoeDetails"
+            app:destination="@id/shoeDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
+    <fragment
+        android:id="@+id/shoeDetailsFragment"
+        android:name="com.udacity.nanodegree.shoestore.shoedetails.ShoeDetailsFragment"
+        android:label="@string/show_details_fragment_title"
+        tools:layout="@layout/fragment_shoe_details" />
 </navigation>

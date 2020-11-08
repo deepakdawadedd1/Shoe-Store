@@ -16,4 +16,14 @@
     <string name="shoe_list">Shoe list</string>
     <string name="fab">Fab</string>
     <string name="shoe_list_fragment_title">Shoe list</string>
+    <string name="show_details_fragment_title">Shoe details</string>
+    <string name="shoe_name_label">Shoe name</string>
+    <string name="enter_shoe_name">Enter shoe name</string>
+    <string name="shoe_company_label">Company</string>
+    <string name="enter_company_name">Enter company name</string>
+    <string name="shoe_size_label">Size</string>
+    <string name="description_label">Descrption</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

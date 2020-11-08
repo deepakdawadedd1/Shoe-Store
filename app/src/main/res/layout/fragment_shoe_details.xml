@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoeDetailViewModel"
+            type="com.udacity.nanodegree.shoestore.shoedetails.ShoeDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".shoedetails.ShoeDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shoe_detail_fragment_shoe_name_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/shoe_name_label"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_detail_fragment_shoe_name_input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:hint="@string/enter_shoe_name"
+                android:singleLine="true"
+                android:text="@{shoeDetailViewModel.shoeName}"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_shoe_name_label" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shoe_detail_fragment_company_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/shoe_company_label"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_shoe_name_input_field" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_detail_fragment_company_input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:hint="@string/enter_company_name"
+                android:singleLine="true"
+                android:text="@{shoeDetailViewModel.company}"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_company_label" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shoe_detail_fragment_size_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/shoe_size_label"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_company_input_field" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_detail_fragment_size_input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:hint="@string/enter_shoe_name"
+                android:singleLine="true"
+                android:text="@{shoeDetailViewModel.size}"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_size_label" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shoe_detail_fragment_description_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/description_label"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_size_input_field" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/shoe_detail_fragment_description_input_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:hint="@string/enter_description"
+                android:text="@{shoeDetailViewModel.description}"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_description_label" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shoe_detail_fragment_cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:onClick="@{()->shoeDetailViewModel.cancel()}"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@id/shoe_detail_fragment_save_button"
+                app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_description_input_field" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shoe_detail_fragment_save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:enabled="@{shoeDetailViewModel.validator}"
+                android:onClick="@{()->shoeDetailViewModel.save()}"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                app:layout_constraintBaseline_toBaselineOf="@id/shoe_detail_fragment_cancel_button"
+                app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
+                app:layout_constraintStart_toEndOf="@id/shoe_detail_fragment_cancel_button" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/shoe_detail_fragment_guideline_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_wide" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/shoe_detail_fragment_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_wide" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
