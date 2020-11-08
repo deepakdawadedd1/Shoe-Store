@@ -38,7 +38,7 @@
                 android:layout_marginTop="@dimen/margin_wide"
                 android:hint="@string/enter_shoe_name"
                 android:singleLine="true"
-                android:text="@{shoeDetailViewModel.shoeName}"
+                android:text="@={shoeDetailViewModel.shoeName}"
                 app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
                 app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
                 app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_shoe_name_label" />
@@ -62,7 +62,7 @@
                 android:layout_marginTop="@dimen/margin_wide"
                 android:hint="@string/enter_company_name"
                 android:singleLine="true"
-                android:text="@{shoeDetailViewModel.company}"
+                android:text="@={shoeDetailViewModel.company}"
                 app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
                 app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
                 app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_company_label" />
@@ -86,7 +86,8 @@
                 android:layout_marginTop="@dimen/margin_wide"
                 android:hint="@string/enter_shoe_name"
                 android:singleLine="true"
-                android:text="@{shoeDetailViewModel.size}"
+                android:inputType="numberDecimal"
+                android:text="@={shoeDetailViewModel.size}"
                 app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
                 app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
                 app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_size_label" />
@@ -109,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_wide"
                 android:hint="@string/enter_description"
-                android:text="@{shoeDetailViewModel.description}"
+                android:text="@={shoeDetailViewModel.description}"
                 app:layout_constraintEnd_toEndOf="@id/shoe_detail_fragment_guideline_end"
                 app:layout_constraintStart_toStartOf="@id/shoe_detail_fragment_guideline_begin"
                 app:layout_constraintTop_toBottomOf="@id/shoe_detail_fragment_description_label" />

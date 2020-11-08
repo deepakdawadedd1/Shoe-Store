@@ -26,4 +26,7 @@
     <string name="enter_description">Enter Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="shoe_name_format">Shoe name: %s</string>
+    <string name="shoe_size_format">Shoe size: %s</string>
+    <string name="shoe_company_format">Company: %s</string>
 </resources>

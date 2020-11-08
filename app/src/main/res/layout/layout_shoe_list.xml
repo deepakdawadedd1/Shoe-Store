@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shoe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_name_format"
+            android:textSize="24sp"
+            android:layout_marginTop="@dimen/margin_half"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shoe_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/shoe_size_format"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/shoe_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shoe_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:text="@string/shoe_company_format"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/shoe_size" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/shoe_company"
+            tools:text="Description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

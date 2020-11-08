@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.udacity.nanodegree.shoestore.Shoe
 
 
 /**
@@ -21,6 +22,8 @@ class ShoeDetailViewModel : ViewModel() {
 
     private val _eventBackToShoeList = MutableLiveData<Boolean>()
     val eventBackToShoeList: LiveData<Boolean> get() = _eventBackToShoeList
+    private val _newShoe = MutableLiveData<Shoe>()
+    val newShoe: LiveData<Shoe> get() = _newShoe
 
     init {
         _eventBackToShoeList.value = false
@@ -51,9 +54,21 @@ class ShoeDetailViewModel : ViewModel() {
     }
 
     fun save() {
+        val name = shoeName.value ?: ""
+        val size = size.value ?: ""
+        val company = company.value ?: ""
+        val description = description.value ?: ""
+        val shoe = Shoe(
+            name = name,
+            size = size.toDoubleOrNull() ?: 0.0,
+            company = company,
+            description = description
+        )
+        _newShoe.value = shoe
         _eventBackToShoeList.value = true
     }
-    fun navigationDone(){
+
+    fun navigationDone() {
         _eventBackToShoeList.value = false
     }
 }
