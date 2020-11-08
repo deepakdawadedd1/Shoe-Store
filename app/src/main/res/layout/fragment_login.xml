@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="loginViewModel"
+            type="com.udacity.nanodegree.shoestore.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"
             android:hint="@string/enter_email"
+            android:text="@={loginViewModel.emailField}"
             app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
             app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
             app:layout_constraintTop_toBottomOf="@id/login_fragment_email_label" />
@@ -52,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"
             android:hint="@string/enter_email"
+            android:text="@={loginViewModel.passwordField}"
             app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
             app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
             app:layout_constraintTop_toBottomOf="@id/login_fragment_password_label" />
@@ -61,6 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_wide"
+            android:enabled="@{loginViewModel.validateField}"
+            android:onClick="@{()->loginViewModel.login()}"
             android:text="@string/login"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
