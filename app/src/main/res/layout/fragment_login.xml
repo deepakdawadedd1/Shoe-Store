@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.LoginFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/login_fragment_email_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:text="@string/email"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_fragment_email_input_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:hint="@string/enter_email"
+            app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_email_label" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/login_fragment_password_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:text="@string/password"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_email_input_field" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_fragment_password_input_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:hint="@string/enter_email"
+            app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_password_label" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_fragment_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@id/login_fragment_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/login_fragment_guideline_begin"
+            app:layout_constraintTop_toBottomOf="@id/login_fragment_password_input_field" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_fragment_guideline_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_wide" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/login_fragment_guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_wide" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
